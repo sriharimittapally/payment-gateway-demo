@@ -5,7 +5,7 @@ import { XCircle } from "lucide-react";
 
 export default function Failed() {
   const navigate = useNavigate();
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(15);
 
   useEffect(() => {
     if (seconds === 0) {
