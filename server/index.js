@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 const options = [
   cors({
-    origin: 'https://payment-gateway-demo-frontend-srihari-mittapallys-projects.vercel.app',
+    origin: '*',
     methods: '*',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
