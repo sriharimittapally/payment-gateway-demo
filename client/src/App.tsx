@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
 import Cart from "./pages/Cart";
+import Failed from "./pages/Failed";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/success" element={<Success />} />
+            <Route path="/failed" element={<Failed />} />
+
             <Route path="*" element={<Products/>}/>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Routes>

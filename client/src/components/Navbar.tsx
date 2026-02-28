@@ -43,12 +43,12 @@ export default function Navbar() {
                     transition={{ type: "spring", duration: 0.4 }}
                   />
                 )}
-                <span className="relative border bg-black text-white py-2  px-4 rounded-lg z-10 flex items-center gap-2">
+                <span className="relative border bg-black text-white py-2 px-3 rounded-lg z-10 flex items-center gap-2">
                   {link.label === "Cart" && <ShoppingCart className="w-4 h-4" />}
                   {link.label}
                   {link.label === "Cart" && totalItems > 0 && (
                     <span
-                      className="text-xs text-primary-foreground w-4 h-4 bg-white text-black rounded-full flex items-center justify-center font-bold"
+                      className="text-xs w-4 h-4 bg-white text-black rounded-full flex items-center justify-center font-bold"
                      
                     >
                       {totalItems}

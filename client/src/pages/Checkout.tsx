@@ -61,8 +61,11 @@ export default function Checkout() {
       },
 
       modal: {
-        ondismiss: () => toast.info("Payment cancelled"),
-      },
+  ondismiss: () => {
+    toast.error("Payment cancelled"),
+    navigate("/failed", { state: { reason: "cancelled" } });
+  },
+},
     };
 
     // @ts-ignore Razorpay global
