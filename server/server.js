@@ -13,6 +13,11 @@ const razorpay = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+
+app.get("/", async(req, res)=>{
+  res.send("Api is working");
+})
+
 // Create Order — called before opening Razorpay checkout
 app.post("/create-order", async (req, res) => {
   try {
