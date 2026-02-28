@@ -6,16 +6,13 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-const options = [
+app.use(
   cors({
-    origin: '*',
-    methods: '*',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
+    origin: "https://payment-gateway-demo-backend.vercel.app",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
   })
-];
-
-app.use(options);
+);
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
