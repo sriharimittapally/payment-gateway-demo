@@ -8,10 +8,13 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://payment-gateway-demo-frontend.vercel.app",
+    origin: [
+      "https://payment-gateway-demo-frontend.vercel.app",
+      "http://localhost:5173",
+    ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
-  })
+  }),
 );
 
 const razorpay = new Razorpay({
@@ -19,10 +22,9 @@ const razorpay = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
-
-app.get("/", async(req, res)=>{
+app.get("/", async (req, res) => {
   res.send("Api is working");
-})
+});
 
 // Create Order — called before opening Razorpay checkout
 app.post("/create-order", async (req, res) => {
@@ -48,7 +50,8 @@ app.post("/create-order", async (req, res) => {
 
 //  Verify Payment — called after Razorpay checkout success
 app.post("/verify-payment", (req, res) => {
-  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+    req.body;
 
   // Generate expected signature using HMAC SHA256
   const body = razorpay_order_id + "|" + razorpay_payment_id;
@@ -69,4 +72,6 @@ app.post("/verify-payment", (req, res) => {
 });
 
 const PORT = process.env.PORT || 6000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`),
+);

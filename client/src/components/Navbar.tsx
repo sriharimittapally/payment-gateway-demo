@@ -14,10 +14,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div
-            className="w-9 h-9 rounded-lg flex text-white bg-gray-600 items-center justify-center"
-            
-          >
+          <div className="w-9 h-9 rounded-lg flex text-white bg-gray-600 items-center justify-center">
             <Zap className="w-5 h-5" />
           </div>
           <span className="text-xl font-bold text-foreground">DemoShop</span>
@@ -44,15 +41,17 @@ export default function Navbar() {
                   />
                 )}
                 <span className="relative border bg-black text-white py-2 px-3 rounded-lg z-10 flex items-center gap-2">
-                  {link.label === "Cart" && <ShoppingCart className="w-4 h-4" />}
-                  {link.label}
-                  {link.label === "Cart" && totalItems > 0 && (
-                    <span
-                      className="text-xs w-4 h-4 bg-white text-black rounded-full flex items-center justify-center font-bold"
-                     
-                    >
-                      {totalItems}
-                    </span>
+                  {link.label === "Cart" ? (
+                    <>
+                      <ShoppingCart className="w-5 h-5" />
+                      {totalItems > 0 && (
+                        <span className="absolute -top-1 -right-1 text-[10px] w-4 h-4 bg-yellow-300 text-black rounded-full flex items-center justify-center font-bold">
+                          {totalItems}
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    link.label
                   )}
                 </span>
               </Link>
