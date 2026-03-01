@@ -187,7 +187,7 @@ export default function Checkout() {
           <button
             onClick={handlePayment}
             disabled={loading}
-            className="w-full py-3.5 rounded-lg text-white font-semibold text-sm flex items-center justify-center gap-2 mt-4 transition-all"
+            className="w-full py-3.5 cursor-pointer rounded-lg text-white font-semibold text-sm flex items-center justify-center gap-2 mt-4 transition-all"
             style={{ background: "black", opacity: loading ? 0.7 : 1 }}
           >
             <Lock className="w-4 h-4" />
