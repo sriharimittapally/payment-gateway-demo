@@ -65,14 +65,14 @@ export default function Failed() {
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => navigate("/checkout")}
-            className="flex-1 px-5 py-2.5 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2"
+            className="flex-1 px-5 py-2.5 bg-black text-white cursor-pointer rounded-lg text-sm font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2"
           >
             Retry Payment
           </button>
 
           <button
             onClick={() => navigate("/cart")}
-            className="flex-1 px-5 py-2.5 border border-border rounded-lg text-sm font-medium hover:bg-secondary transition flex items-center justify-center gap-2"
+            className="flex-1 px-5 py-2.5 border cursor-pointer border-border rounded-lg text-sm font-medium hover:bg-secondary transition flex items-center justify-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Cart
