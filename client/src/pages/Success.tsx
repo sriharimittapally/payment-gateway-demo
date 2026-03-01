@@ -26,14 +26,14 @@ export default function Success() {
       >
         {/* Success Icon */}
         
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", delay: 0.2 }}
-          className="w-20 h-20 rounded-full mx-auto flex items-center justify-center"
-        >
-          <CheckCircle2 className="w-10 h-10 text-success-foreground" />
-        </motion.div>
+       <motion.div
+  initial={{ scale: 0 }}
+  animate={{ scale: 1 }}
+  transition={{ type: "spring", delay: 0.2 }}
+  className="w-20 h-20 rounded-full mx-auto flex items-center justify-center bg-green-100"
+>
+  <CheckCircle2 className="w-10 h-10 text-green-600" />
+</motion.div>
         <div>
           <h1 className="text-2xl font-bold text-foreground">Payment Successful!</h1>
           <p className="text-muted-foreground mt-2">Thank you for your purchase</p>

@@ -8,9 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin:
-      "https://payment-gateway-demo-frontend.vercel.app"
-,
+    origin:[
+      "https://payment-gateway-demo-frontend.vercel.app",
+      "http://localhost:5173"
+,],
     
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
